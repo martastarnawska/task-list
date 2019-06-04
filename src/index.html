@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task List</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="header" class="header">
+        <nav class="navigation">
+            <button class="header__menu" id="sort-open">
+                    <i class="fas fa-bars"></i>
+            </button>
+    
+            <ul class="navigation__list" id="sort-list">
+                <li class="navigation__item" id="date">
+                    <button class="navigation__button sort-btn">Sort by date </button>
+                </li>
+                <li class="navigation__item" id="priority">
+                    <button class="navigation__button sort-btn">Sort by priority</button>
+                </li>
+                <li class="navigation__item"> 
+                    <p>Tasks per page :</p>
+                    <select class="navigation__select" id="select-task-num"> 
+                        <option class="navigation__option" value="5"> 5 </option>
+                        <option class="navigation__option" value="10"> 10 </option>
+                        <option class="navigation__option" value="15"> 15 </option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <main class="container"> 
+        <section>
+            <ul id="tasks-list" class="list">
+            </ul>  
+        </section>
+
+        <form id="form" class="form">
+            <span class="form__close" id="form-close">
+                <i class="fas fa-times"></i>
+            </span>
+            <fieldset>
+                <legend class="form__title">Add new task</legend>
+                <ul>
+                    <li class="form__item">
+                        <label for="task-input">Describe a task</label>
+                        <textarea class="form__input" id="task-input" type="text"></textarea>
+                    </li>
+                    <li class="form__item">
+                        <label for="date-input">Select a date</label>
+                        <input class="form__input" id ="date-input" type="date">
+                    </li>
+                    <li class="form__item">
+                        <label for="priority-select">Priority</label>
+                        <select class="form__input" name="priority" id="priority-select">
+                            <option value="1">Low</option>
+                            <option value="2">Medium</option>
+                            <option value="3">High</option>
+                        </select>
+                    </li>
+                    <li class="form__item form__item--submit">
+                        <input class="form__button" type="submit" value="&#10004" id="submit">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </main>
+
+    <footer class="footer" id="footer">
+        <button class="button button--prev" id="previous-btn" disabled><i class="fas fa-arrow-left"></i></button>
+        <button class="footer__button" id = "add-btn"> + </button>
+        <button class="button button--next" id="next-btn" disabled><i class="fas fa-arrow-right"></i></button>
+    </footer>
+
+</body>
+</html>

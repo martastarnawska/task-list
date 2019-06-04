@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+} 
+
+body {
+    line-height: 1.5;
+    font-family: 'Lato', sans-serif;
+    background-color: #3d4e75;
+}
+
+button, input[type=submit] {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: auto;
+}
