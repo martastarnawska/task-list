@@ -1,13 +1,10 @@
 .navigation {
-        // &__icon {
-    //     padding: 15px 5px;
-    // }
-
+    
     &__list {
         display: none;
         position: fixed;
         top: 50px;
-        background-color: #6d79a1;
+        background-color: $c-blue-secondary;
         width: 100%;
         opacity: 0.95;
 
@@ -17,19 +14,19 @@
     }
 
     &__item {
-        border-bottom: 1px solid lightgray;
+        border-bottom: 1px solid $c-whitesmoke;
         padding-left: 20px;
         height: 60px;
         display: flex;
         align-items: center;
         font-size: 1.2rem;
-        color: white;
+        color: $c-whitesmoke;
     }
 
     &__button {
-        background-color: #6d79a1;
+        background-color: transparent;
         font-family: 'Lato';
-        color: white;
+        color: $c-whitesmoke;
         border: none;
         font-size: 1em;
         width: 100%;
@@ -37,17 +34,14 @@
         text-align: left;
     }
 
-    // &__arrow {
-    //     display: none;
-    // }
-
     &__select {
-        background-color: #6d79a1;
+        background-color: transparent;
         font-family: 'Lato';
-        color: white;
+        color: $c-white;
         border: none;
         font-size: 1em;
         margin-left: 10px;
+        padding: 10px;
     }
 }
 
