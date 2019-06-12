@@ -35,13 +35,94 @@
     }
 
     &__select {
-        background-color: transparent;
+        background-color: $c-blue-secondary;
         font-family: 'Lato';
         color: $c-white;
         border: none;
         font-size: 1em;
         margin-left: 10px;
         padding: 10px;
+    }
+
+    &__column {
+        display: none;
+    }
+
+    @media screen and (min-width: 860px) {
+        &__list {
+            position: absolute;
+            left: 50px;
+            top: 40px;
+            display: grid;
+            grid-template-columns: 10% 40% 20% 15% 10%;
+            min-height: 50px;
+            height: 55px;
+            width: 760px;
+            border-radius: 7px; 
+            background-color: darken($c-whitesmoke, 10%);
+            border: 2px solid $c-gray-slate;
+        }
+
+        &__item {
+            height: 50px;
+            border: none;
+
+            &--select {
+                position: fixed;
+                bottom: 0;
+                left: 80px;
+            }
+        }
+
+        &__button {
+            height: 50px;
+            text-align: center;
+            margin-top: 7px;
+            border: none;
+            color: $c-gray-dark;
+        }
+
+        &__item:first-child .navigation__button, 
+        &__item:nth-child(2) .navigation__button {
+            text-align: left
+        }
+
+        &__text {
+            display: none;
+        }
+
+        &__column {
+            display: inline;
+        }
+    }
+
+    @media screen and (min-width: 960px) {
+        &__list {
+            left: 80px;
+        }
+    }
+
+    @media screen and (min-width: 1300px) {
+        position: static;
+        width: 100%;
+        margin: 60px 40px 15px;
+        @include grid;
+
+        &__list {
+            position: static;
+            width: 700px;
+        }
+
+        &__item--select {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            left: unset;
+        }
+
+        &__select {
+            background-color: $c-blue-main;
+        }
     }
 }
 
@@ -53,4 +134,11 @@
 .sorted-asc::after {
     content: " \2191";
     color: white;
+}
+
+@media screen and (min-width: 760px) {
+    .sorted-desc::after, 
+    .sorted-asc::after {
+        color: $c-gray-dark;
+    }
 }

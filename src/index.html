@@ -17,14 +17,36 @@
             </button>
     
             <ul class="navigation__list" id="sort-list">
+                <li class="navigation__item" id="done">
+                    <button class="navigation__button sort-btn">
+                        <span class="navigation__text"> Sort by done</span>
+                        <span class="navigation__column"> &#10004; </span>
+
+                    </button>
+                </li>
+                <li class="navigation__item" id="name">
+                    <button class="navigation__button sort-btn">
+                        <span class="navigation__text"> Sort tasks alphabetically </span>
+                        <span class="navigation__column"> Task</span>
+  
+
+                    </button>
+                </li>
+                                    
                 <li class="navigation__item" id="date">
-                    <button class="navigation__button sort-btn">Sort by date </button>
+                    <button class="navigation__button sort-btn">
+                        <span class="navigation__text">Sort by date </span>
+                        <span class="navigation__column"> Date </span>
+                    </button>
                 </li>
                 <li class="navigation__item" id="priority">
-                    <button class="navigation__button sort-btn">Sort by priority</button>
+                    <button class="navigation__button sort-btn">
+                        <span class="navigation__text">Sort by priority </span>
+                        <span class="navigation__column">Priority </span>
+                    </button>
                 </li>
-                <li class="navigation__item"> 
-                    <p>Tasks per page :</p>
+                <li class="navigation__item navigation__item--select"> 
+                    <label for="select-task-num">Tasks per page :</label>
                     <select class="navigation__select" id="select-task-num"> 
                         <option class="navigation__option" value="5"> 5 </option>
                         <option class="navigation__option" value="10"> 10 </option>
@@ -35,9 +57,8 @@
         </nav>
     </header>
 
-    
     <main class="container"> 
-        <section>
+        <section class="container__list-wrapper">
             <ul id="tasks-list" class="list">
             </ul>  
         </section>
@@ -74,9 +95,9 @@
     </main>
 
     <footer class="footer" id="footer">
-        <button class="button button--prev" id="previous-btn" disabled><i class="fas fa-arrow-left"></i></button>
+        <button class="footer__arrow footer__arrow--prev button button--prev" id="previous-btn" disabled><i class="fas fa-arrow-left"></i></button>
         <button class="footer__button" id = "add-btn"> + </button>
-        <button class="button button--next" id="next-btn" disabled><i class="fas fa-arrow-right"></i></button>
+        <button class="footer__arrow footer__arrow--next button button--next" id="next-btn" disabled><i class="fas fa-arrow-right"></i></button>
     </footer>
 
 </body>

@@ -4,7 +4,6 @@ function Task(name, date, priority) {
     this.name = name;
     this.date = date;
     this.priority = priority;
-    // this.status = "new";
     this.done = false;
 }
 
@@ -23,6 +22,8 @@ const openSort = document.getElementById("sort-open");
 const sortBtns = document.querySelectorAll(".sort-btn");
 const sortList =  document.getElementById("sort-list");
 const selectVolume = document.getElementById("select-task-num");
+let largeScreen = window.matchMedia("(min-width: 1300px)");
+
 
 function init() {
     const closeBtn = document.getElementById("form-close");
@@ -34,6 +35,7 @@ function init() {
     openSort.addEventListener("click", navOpenClose);
     closeBtn.addEventListener("click", closeForm);
     selectVolume.addEventListener("change", onVolumeSelect);
+    largeScreen.addListener(handleScreenResizing)
 
     sortBtns.forEach(function(btn){
         btn.addEventListener("click", onSort);
@@ -48,9 +50,23 @@ function init() {
     } else {
         tasksArray = []
     }
+    handleScreenResizing(largeScreen);
 }
 
 init();
+
+function handleScreenResizing(largeScreen) {
+    if(largeScreen.matches) {
+        form.classList.remove("hidden");
+        header.style.display = "flex";
+        // form.style.display = "block";
+    }
+    else {
+        // form.style.display = "none";
+        form.classList.add("hidden");
+        sortList.classList.remove("navigation__list--show");
+    }
+}
 
 function onVolumeSelect() {
     let value = selectVolume[selectVolume.selectedIndex].value;
@@ -64,7 +80,8 @@ function navOpenClose() {
 }
 
 function onFormOpen() {
-    form.style.display = "block";
+    form.classList.remove("hidden");
+
     header.style.display = "none";
     list.style.display = "none";
     footer.style.display = "none";
@@ -74,8 +91,9 @@ function onFormOpen() {
 }
 
 function closeForm() {
-    form.style.display = "none";
-    header.style.display = "block"
+    form.classList.add("hidden");
+
+    header.style.display = largeScreen.matches? "flex" : "block";
     list.style.display = "block";
     footer.style.display = "block";
 }
@@ -100,7 +118,14 @@ function onTaskCreate() {
     
     localStorage.setItem('storeList', JSON.stringify(tasksArray));
 
-    closeForm();
+    let largeScreen = window.matchMedia("(min-width: 1300px)");
+    if (largeScreen.matches) {
+        console.log("matches")
+    } else {
+        console.log("small")
+        closeForm();
+    }
+    // closeForm();
 
     // show new task always at the last page of list 
     if (tasksArray.length / tasksPerPage > currentPage) {

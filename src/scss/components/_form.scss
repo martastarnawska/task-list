@@ -1,6 +1,5 @@
 .form {
     position: relative;
-    display: none;
     background-color: $c-white;
     border-radius: 10px;
     padding: 40px 20px 20px;
@@ -65,6 +64,32 @@
             background-color: $c-whitesmoke;
             color: $c-blue-secondary;
             border: 2px solid $c-blue-secondary;
+        }
+    }
+
+    @media screen and (min-width: 430px) {
+        padding: 40px 30px 20px;
+    }
+
+    @media screen and (min-width: 600px) {
+        max-width: 600px;
+        margin: 80px auto;
+    }
+
+    @media screen and (min-width: 1300px) {
+        display: block;
+        width: 350px;
+        height: 350px;
+        margin: 30px 0;
+        background-color: darken($c-whitesmoke, 3%);
+        color: lighten($c-gray-dark, 10%);
+
+        &__close, &__title {
+            display: none;
+        }
+
+        &__input {
+            border-color: $c-gray-light;
         }
     }
 

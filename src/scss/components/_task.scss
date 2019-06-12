@@ -41,7 +41,7 @@
 
     &__name {
         grid-column: 2 / 4;
-        font-size: 1.3rem;
+        font-size: 1.2em;
         padding-top: 30px;
         text-align: left;
     }
@@ -66,5 +66,51 @@
         background-color: transparent;
         border: none;
         color: $c-silver;
+    }
+
+    @media screen and (min-width: 600px) {
+        grid-template-columns: 10% 40% 20% 15% 10%;
+        min-height: 70px;
+        padding: 0;
+        margin-bottom: 15px;
+
+        @mixin center-vertically {
+            grid-row: 1;
+            display: flex;
+            align-items: center;
+        }
+        
+        &__checkbox {
+            @include center-vertically;
+        }
+
+        &__name {
+            grid-column: 2;
+            margin: auto 0;
+            padding: 0;
+            @include center-vertically;
+        }
+
+        &__date {
+            @include center-vertically;
+            justify-content: center;
+        }
+
+        &__priority {
+            grid-column-start: 4;
+            height: 26px;
+            margin: auto;
+            @include center-vertically;
+            justify-content: center;
+        }
+
+        &__remove {
+            grid-column-start: 5;
+            @include center-vertically;
+        }
+    }
+
+    @media screen and (min-width: 860px) {
+        width: 760px;
     }
 }

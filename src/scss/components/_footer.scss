@@ -4,34 +4,39 @@
     bottom: 0;
     width: 100%;
     background-color: $c-blue-secondary;
-}
 
-
-.button {
-    background-color: transparent;
-    border: none;
-    color: $c-whitesmoke;
-    font-size: 1.2em;
-    position: absolute;
-    bottom: 13px;
-
-    &--prev {
-        left: 20px;
+    &__button {
+        position: absolute;
+        bottom: 15px;
+        right: calc(50% - 30px);
+        padding: 10px 20px;
+        border-radius: 50%;
+        background-color: $c-whitesmoke;
+        color: $c-blue-secondary;
+        border: 2px solid $c-blue-secondary;
+        font-size: 2em;
     }
 
-    &--next {
-        right: 20px;
+    &__arrow {
+        background-color: transparent;
+        border: none;
+        color: $c-whitesmoke;
+        font-size: 1.2em;
+        position: absolute;
+        bottom: 13px;
+    
+        &--prev {
+            left: 20px;
+        }
+    
+        &--next {
+            right: 20px;
+        }
     }
-}
 
-.footer__button {
-    position: absolute;
-    bottom: 15px;
-    right: calc(50% - 30px);
-    padding: 10px 20px;
-    border-radius: 50%;
-    background-color: $c-whitesmoke;
-    color: $c-blue-secondary;
-    border: 2px solid $c-blue-secondary;
-    font-size: 2em;
+    @media screen and (min-width: 1300px) {
+        &__button {
+            display: none;
+        }
+    }
 }
