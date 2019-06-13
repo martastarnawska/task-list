@@ -124,6 +124,14 @@
             background-color: $c-blue-main;
         }
     }
+
+    @media screen and (min-width: 1600px) {
+        justify-content: center;
+
+        &__list {
+            width: 800px; 
+        }
+    }
 }
 
 .sorted-desc::after {

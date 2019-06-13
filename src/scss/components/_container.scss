@@ -28,4 +28,13 @@
             margin: 0;
         }
     }
+
+    @media screen and (min-width: 1600px) {
+        justify-content: center;
+
+        &__list-wrapper {
+            width: 800px; 
+        }
+
+    }
 }

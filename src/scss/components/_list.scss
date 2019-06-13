@@ -9,4 +9,8 @@
      @media screen and (min-width: 1300px) {
          margin-top: 0;
      }
+     
+     @media screen and (min-width: 1600px) {
+        max-width: unset;
+    }
 }

@@ -44,6 +44,10 @@
         font-size: 1.2em;
         padding-top: 30px;
         text-align: left;
+
+        &--placeholder {
+            grid-column: 2 /5;
+        }
     }
 
     &__date {
@@ -112,5 +116,9 @@
 
     @media screen and (min-width: 860px) {
         width: 760px;
+    }
+
+    @media screen and (min-width: 1600px) {
+        width: unset;
     }
 }
