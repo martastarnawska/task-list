@@ -3,7 +3,7 @@
     position: relative;
     background-color: $c-white;
     border-radius: 10px;
-    padding: 40px 20px 20px;
+    padding: 40px 20px 25px;
     margin-top: 80px;
 
     &__close {
@@ -57,7 +57,7 @@
 
     &__button {
         position: absolute;
-        bottom: -20px;
+        bottom: -25px;
         background: transparent;
         border: none;
 
