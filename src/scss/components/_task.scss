@@ -3,7 +3,8 @@
     min-width: 250px;
     max-width: 100%;
     min-height: 90px;
-    grid-template-columns: 15% 40% 25% 10%;
+    // grid-template-columns: 15% 40% 25% 10%;
+    grid-template-columns: 15% 35% 25% 15%;
     grid-gap: 10px 5px;
     margin-bottom: 20px;
     background-color: $c-white;
@@ -62,6 +63,10 @@
         border-radius: 20px;
         text-align: center;
         width: 80px;
+        user-select: none;
+        height: 25px;
+        line-height: 25px;
+        vertical-align: middle;
     }
 
     &__remove {
@@ -78,6 +83,10 @@
         &:hover {
             color: $c-blue-main;
         }
+    }
+
+    @media screen and (min-width: 450px) {
+        grid-template-columns: 15% 40% 25% 10%;
     }
 
     @media screen and (min-width: 600px) {
