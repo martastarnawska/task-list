@@ -1,11 +1,12 @@
 import {app} from "./app.js";
 import {goToPage} from "./pagination.js";
-import {removeSortArrow, sortArray} from "./sort.js";
+import {removeSortArrow, sortArray, sortBtnsEnable, sortBtnsDisable} from "./sort.js";
 import setInitialDate from "./date.js";
 import {Task} from "./taskClass.js";
 
+
 function onFormOpen() {
-    app.form.classList.remove("hidden");
+    app.form.style.display = "block";
     app.header.style.display = "none";
     app.list.style.display = "none";
     app.footer.style.display = "none";
@@ -14,7 +15,7 @@ function onFormOpen() {
 }
 
 function closeForm() {
-    app.form.classList.add("hidden");
+    app.form.style.display = "none"
     app.header.style.display = app.largeScreen.matches? "flex" : "block";
     app.list.style.display = "block";
     app.footer.style.display = "block";
@@ -28,6 +29,9 @@ function onTaskCreate() {
     let taskIndex = app.tasksArray.length;
     let newTask = new Task(taskName, taskDate, taskPriority);
     app.tasksArray.push(newTask);
+    if (app.tasksArray.length === 2 ) {
+        sortBtnsEnable();
+    }
     
     localStorage.setItem('storeList', JSON.stringify(app.tasksArray));
 
@@ -66,12 +70,12 @@ function onVolumeSelect() {
 
 function handleScreenResizing(largeScreen) {
     if(largeScreen.matches) {
-        app.form.classList.remove("hidden");
+        app.form.style.display = "block";
         app.header.style.display = "flex";
         app.list.style.display = "block";
     }
     else {
-        app.form.classList.add("hidden");
+        app.form.style.display = "none";
         app.sortList.classList.remove("navigation__list--show");
     }
     app.footer.style.display = "block";
@@ -100,6 +104,9 @@ function onCheckboxChange(event) {
 
 function onTaskRemove(index) {  
     app.tasksArray.splice(index, 1);
+    if (app.tasksArray.length < 2) {
+        sortBtnsDisable();
+    }
     localStorage.setItem("storeList", JSON.stringify(app.tasksArray));
 
     if (index == app.tasksArray.length && index % app.tasksPerPage == 0 && app.currentPage != 1 ) {

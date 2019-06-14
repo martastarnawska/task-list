@@ -19,4 +19,17 @@ function sortArray(cat, direction) {
     goToPage("first");
 }
 
-export {removeSortArrow, sortArray}
+function sortBtnsDisable() {
+    app.sortBtns.forEach(function(btn){
+        btn.disabled = true;
+    });
+    removeSortArrow();
+}
+
+function sortBtnsEnable() {
+    app.sortBtns.forEach(function(btn){
+        btn.disabled = false;
+    });
+} 
+
+export {removeSortArrow, sortArray, sortBtnsDisable, sortBtnsEnable}

@@ -1,13 +1,10 @@
 .form {
+    display: none;
     position: relative;
     background-color: $c-white;
     border-radius: 10px;
     padding: 40px 20px 20px;
     margin-top: 80px;
-
-    &--show {
-        display: block;
-    }
 
     &__close {
         position: absolute;
@@ -52,6 +49,10 @@
         border: 1px solid $c-gray;
         border-radius: 5px;
         font-family: 'Lato', sans-serif;
+
+        &--text {
+            height: 55px;
+        }
     }
 
     &__button {

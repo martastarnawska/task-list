@@ -98,7 +98,7 @@
             border: none;
             color: $c-gray-dark;
 
-            &:hover, &:active {
+            &:hover:enabled, &:active:enabled {
                 font-weight: bold;
             }
         }

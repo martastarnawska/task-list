@@ -4,6 +4,7 @@ import {onFormOpen, closeForm, onTaskCreate, onPageChange, navOpenClose, onVolum
 import {goToPage} from "./pagination.js";
 import setInitialDate from "./date.js";
 import { addPlaceholder } from "./placeholder.js";
+import { sortBtnsDisable } from "./sort.js";
 
 function init() {
     const closeBtn = document.getElementById("form-close");
@@ -28,13 +29,18 @@ function init() {
         if (JSON.parse(retrivedList).length > 0) {
             app.tasksArray = JSON.parse(retrivedList);
             goToPage("first");
+            if (app.tasksArray.length === 1) {
+                sortBtnsDisable();
+            }
         } else  {
             app.tasksArray = [];
             addPlaceholder();
+            sortBtnsDisable();
         }
     } else {
         app.tasksArray = [];
-        addPlaceholder();  
+        addPlaceholder();
+        sortBtnsDisable(); 
     }
 
     handleScreenResizing(app.largeScreen);

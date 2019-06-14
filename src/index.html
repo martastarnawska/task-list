@@ -69,7 +69,7 @@
                 <ul>
                     <li class="form__item">
                         <label for="task-input">Describe a task</label>
-                        <textarea class="form__input" id="task-input" type="text"></textarea>
+                        <input class="form__input form__input--text" id="task-input" type="text"></input>
                     </li>
                     <li class="form__item">
                         <label for="date-input">Select a date</label>
@@ -84,7 +84,10 @@
                         </select>
                     </li>
                     <li class="form__item form__item--submit">
-                        <input class="form__button" type="submit" value="&#10004" id="submit">
+                        <button class="form__button" id="submit">
+                                <i class="fas fa-check"></i>
+                        </button>
+                        <!-- <input class="form__button" type="submit" value="&#10004" id="submit"> -->
                     </li>
                 </ul>
             </fieldset>

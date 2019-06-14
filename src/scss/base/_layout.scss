@@ -8,14 +8,10 @@ body {
     background-color: $c-blue-main;
 }
 
-button, input[type=submit] {
+button, input[type=submit], select {
     cursor: pointer;
 }
 
 button:disabled {
     cursor: auto;
-}
-
-.hidden {
-    display: none;
 }
