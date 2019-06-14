@@ -18,6 +18,11 @@
         opacity: 0.7;
         color: $c-blue-main;
         cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover, &:active {
+            opacity: 1;
+        }
     }
 
     &__title {
@@ -51,19 +56,17 @@
 
     &__button {
         position: absolute;
+        padding: 9px 16px;
+        text-align: center;
+        font-size: 1.5em;
         background-color: $c-blue-secondary;
-        height: 50px;
-        width: 51px;
+        border: 2px solid $c-blue-secondary;
         border-radius: 50%;
         color: $c-white;;
-        font-size: 1.5em;
-        border: none;
-        text-align: center;
 
-        &:hover {
-            background-color: $c-whitesmoke;
+        &:hover, &:active {
+            background-color: darken($c-whitesmoke, 3%);
             color: $c-blue-secondary;
-            border: 2px solid $c-blue-secondary;
         }
     }
 

@@ -21,6 +21,23 @@
         align-items: center;
         font-size: 1.2rem;
         color: $c-whitesmoke;
+        transition: all 0.3s;
+
+        @media screen and (max-width: 859px) {
+            &:hover, &:active {
+                background-color: darken($c-whitesmoke, 10%);
+                color: $c-blue-main;
+    
+                & button, & button:after {
+                    color: $c-blue-main;
+                }
+
+                & select {
+                    background-color: darken($c-whitesmoke, 10%);
+                    color: $c-blue-main;
+                }
+            }   
+        }
     }
 
     &__button {
@@ -80,6 +97,10 @@
             margin-top: 7px;
             border: none;
             color: $c-gray-dark;
+
+            &:hover, &:active {
+                font-weight: bold;
+            }
         }
 
         &__item:first-child .navigation__button, 
@@ -144,7 +165,7 @@
     color: white;
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 860px) {
     .sorted-desc::after, 
     .sorted-asc::after {
         color: $c-gray-dark;

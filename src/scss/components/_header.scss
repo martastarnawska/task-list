@@ -16,6 +16,11 @@
         font-size: 1.5em;
         border: none;
         padding: 15px 20px;
+
+        &:hover {
+            transform: scale(1.2);
+            text-shadow: 0 2px 20px black;
+        }
     }
 
     @media screen and (min-width: 860px) {

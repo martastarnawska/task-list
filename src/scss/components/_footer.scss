@@ -9,12 +9,18 @@
         position: absolute;
         bottom: 15px;
         right: calc(50% - 30px);
-        padding: 10px 20px;
         border-radius: 50%;
         background-color: $c-whitesmoke;
         color: $c-blue-secondary;
         border: 2px solid $c-blue-secondary;
-        font-size: 2em;
+        padding: 17px 20px;
+        font-size: 1.3em;
+        transition: all 0.3s;
+
+        &:hover {
+            color: darken($c-blue-secondary, 5%);
+            transform: rotate(90deg);
+        }
     }
 
     &__arrow {
@@ -23,14 +29,28 @@
         color: $c-whitesmoke;
         font-size: 1.2em;
         position: absolute;
-        bottom: 13px;
+        bottom: -2px;
+        padding: 15px 20px;
+        transition: all 0.1s;
+
+        &:hover:enabled, &:active:enabled {
+            text-shadow: 0 2px 20px darken($c-blue-main, 15%);
+        }
     
         &--prev {
             left: 20px;
+
+            &:hover:enabled, &:active:enabled {
+                transform: translateX(-10px);
+            }
         }
     
         &--next {
             right: 20px;
+            
+            &:hover:enabled, &:active:enabled {
+                transform: translateX(10px);
+            }
         }
     }
 

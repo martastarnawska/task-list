@@ -1,15 +1,20 @@
 .task {
     display: grid;
-    min-width: 300px;
+    min-width: 250px;
     max-width: 100%;
     min-height: 90px;
     grid-template-columns: 15% 40% 25% 10%;
     grid-gap: 10px 5px;
-
     margin-bottom: 20px;
     background-color: $c-white;
     border-radius: 7px;
     padding-bottom: 10px;
+
+    &--placeholder {
+        display: flex;
+        justify-content: flex-start;
+        padding: 0 20px;
+    }
     
     &__checkbox {
         grid-row: 1 /3;
@@ -44,10 +49,6 @@
         font-size: 1.2em;
         padding-top: 30px;
         text-align: left;
-
-        &--placeholder {
-            grid-column: 2 /5;
-        }
     }
 
     &__date {
@@ -64,12 +65,19 @@
     }
 
     &__remove {
-        height: 30px;
         margin: auto auto;
         grid-row: 1 / 3;
         background-color: transparent;
         border: none;
         color: $c-silver;
+
+        .fas {
+            padding: 20px 20px;
+        }
+
+        &:hover {
+            color: $c-blue-main;
+        }
     }
 
     @media screen and (min-width: 600px) {
@@ -77,6 +85,10 @@
         min-height: 70px;
         padding: 0;
         margin-bottom: 15px;
+
+        &--placeholder {
+            padding: 0 40px;
+        }
 
         @mixin center-vertically {
             grid-row: 1;
