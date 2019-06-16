@@ -1,7 +1,7 @@
 {
   "name": "task-list",
   "version": "1.0.0",
-  "description": "",
+  "description": "classic task list",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",

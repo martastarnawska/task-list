@@ -8,14 +8,15 @@
     &__button {
         position: absolute;
         bottom: 15px;
-        right: calc(50% - 30px);
+        left: 50%;
+        transform: translate(-50%);
         border: none;
         background: transparent;
         transition: all 0.3s;
 
         &:hover {
             color: darken($c-blue-secondary, 5%);
-            transform: rotate(90deg);
+            transform: translate(-50%) rotate(90deg);
         }
     }
 
